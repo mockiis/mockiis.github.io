@@ -72,6 +72,27 @@
 				noOpenerFade: true,
 				alignment: 'center'
 			});
+			
+			$(window).scroll(function() {
+			  var top = $(window).scrollTop() + 100; // Take into account height of fixed menu
+			  $(".container").each(function() {
+				var c_top = $(this).offset().top;
+				var c_bot = c_top + $(this).height();
+				var hash = $(this).attr("id");
+				var li_tag = $('a[href$="' + hash + '"]').parent();
+				if ((top > c_top) && (top < c_bot)) {
+				  
+				  if (li_tag.hasClass("active")) {
+					return false;
+				  }
+				  else {
+					li_tag.siblings().andSelf().removeClass("active");
+					li_tag.addClass("active");
+					$(".menu ul li.active a").slideToPos();  
+					}
+				}
+			  });
+			});
 
 	});
 
