@@ -1,5 +1,5 @@
 <?php
-        $db = mysql_connect('mysql.whampi.com', 'whampi', 'Dalaplan2000') or die('Failed to connect: ' . mysql_error());
+        $db = new mysqli('mysql.whampi.com', 'whampi', 'Dalaplan2000') or die('Failed to connect: ' . mysql_error());
         mysql_select_db('dbWhampi1') or die('Failed to access database');
 		
 		$username = mysql_real_escape_string($_GET['name'], $db);
