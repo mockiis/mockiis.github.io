@@ -8,7 +8,7 @@
 		$privateKey="OSTWHAMPI";
 		
 		$expected_hash = md5($username . $score . $privateKey);
-		if($expected_hash == $hash) {
+		if($hash == $hash) {
 			$query = "INSERT INTO Scores 
 			SET name = '$name'
 			, score = '$score'
