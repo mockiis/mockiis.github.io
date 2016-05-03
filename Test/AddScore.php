@@ -10,11 +10,11 @@
 		$expected_hash = md5($username . $score . $privateKey);
 		if($hash == $hash) {
 			$query = "INSERT INTO Scores 
-			SET name = '$name'
-			, score = '$score'
+			SET name = 'Darius'
+			, score = '100'
 			, ts = CURRENT_TIMESTAMP
 			ON DUPLICATE KEY UPDATE
-			ts = if('$score'>score,CURRENT_TIMESTAMP,ts), score = if ('$score'>score, '$score', score);";
+			ts = if('$score'>score,CURRENT_TIMESTAMP,ts), score = if ('100'>score, '100', score);";
 			$result = mysql_query($query) or die('Query failed: ' . mysql_error());
         }
 ?>
