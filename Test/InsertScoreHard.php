@@ -1,5 +1,3 @@
-define('NAME', "darius"); // db user  
-define('SCORE', "2000"); // db password 
 <?php   
 	$db = new DB_CONNECT();  
       $result = mysql_query("INSERT INTO Scores (name, score) VALUES('Darius', '2000')");  
